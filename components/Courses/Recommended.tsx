@@ -21,9 +21,9 @@ const Recommended = () => {
     { id: 2, image: imgtwo },
     { id: 3, image: imgthree },
     { id: 4, image: imgfour },
-    { id: 4, image: imgtwo },
-    { id: 4, image: imgfour },
-    { id: 4, image: imgone },
+    { id: 5, image: imgtwo },
+    { id: 6, image: imgfour },
+    { id: 7, image: imgone },
   ];
   return (
     <div className="bg-[#9dccff50] w-full mx-auto px-[0.8rem] sm:px-[3rem] lg:px-[5rem] py-[2rem] md:py-[4rem] pt-[2rem] md:pt-[3rem] md:pb-[3rem] ">

@@ -31,7 +31,7 @@ const Marketing = () => {
                   <span className="text-[#696984] md:text-[0.8rem] lg:text[1rem]">Design</span>
                 </div>
                 <div className="flex gap-2 md:gap-0 lg:gap-2 items-center">
-                  <IoMdTime className="text-[2rem] text-[#d9d9d9] md:text-[1rem] lg:text[1.4rem]"/>{" "}
+                  <IoMdTime className="text-[2rem] text-[#d9d9d9] md:text-[1rem] lg:text[1.4rem]" />{" "}
                   <span className="text-[#696984] md:text-[0.8rem] lg:text[1rem]">3 Month</span>
                 </div>
               </div>

@@ -3,9 +3,11 @@ import Everthing from '@/components/Courses/id/Everthing'
 import Marketing from '@/components/Courses/id/Marketing'
 import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
-import React from 'react'
+import { Course } from '@/data/item'
 
 const page = () => {
+
+  
   return (
     <div>
         <Navbar />

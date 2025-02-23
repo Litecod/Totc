@@ -1,4 +1,5 @@
-"use client";
+"use client"
+
 
 import { Swiper, useSwiper, SwiperSlide } from "swiper/react";
 import { sliderSettings } from "@/utils/CommonThreeCol";
@@ -12,15 +13,10 @@ import { FaGreaterThan, FaLessThan } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Link from "next/link";
 
 const CoursesHero = () => {
-  // const course = [
-  //   { id: 1, image: imgone },
-  //   { id: 2, image: imgtwo },
-  //   { id: 3, image: imgthree },
-  //   { id: 4, image: imgone },
-  //   { id: 5, image: imgtwo },
-  // ];
+  
 
   return (
     <div className="bg-[#9dccff50] w-full mx-auto px-[0.8rem] sm:px-[3rem] lg:px-[5rem] py-[2rem] md:py-[4rem] pt-[2rem] md:pt-[3rem] md:pb-[3rem] ">
@@ -39,10 +35,17 @@ const CoursesHero = () => {
             className="bg-[#ffff] shadow-sm shadow-[#00000018] rounded-2xl p-[1rem]"
           >
             <div className="w-full flex flex-col gap-2">
-              <Image src={item.image} width={30} height={30} alt="Image" className="w-full" />
-              <h3>AWS Certified Solutions Architect</h3>
+              <Image
+                src={item.image}
+                
+                width={100}
+                height={40}
+                alt="Image"
+                className="w-full"
+              />
+              <Link href={`/courses/${item.id}`} ><h3>AWS Certified Solutions Architect</h3></Link>
               <div className=" flex gap-4 items-center">
-                <Image src={smimage} alt="Image" width={30} height={30} />
+                <Image src={smimage} alt="Image" />
                 <p>Lina</p>
               </div>
               <div className="w-[100%] h-[0.5rem] bg-[#D9D9D9] rounded-md">
@@ -78,6 +81,3 @@ const SliderButtons = () => {
     </div>
   );
 };
-
-//flex flex-col md:flex-row mt-[3rem] justify-between
-/**  */
