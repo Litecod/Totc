@@ -83,6 +83,7 @@ const Toct = () => {
         <div className="absolute right-[-1rem] top-[-1rem] -z-10">
           <div className="bg-[#23BDEE] w-[6rem] h-[6rem] rounded-2xl ml-[-27rem] opacity-25 lg:opacity-100"></div>
           <div className="bg-[#33EFA0] w-[10rem] h-[10rem] rounded-2xl mt-[9.5rem] md:mt-[5rem] lg:mt-[9.5rem]"></div>
+        
         </div>
       </div>
     </div>

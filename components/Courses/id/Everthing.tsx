@@ -5,8 +5,9 @@ import student from "@/images/student.png";
 
 const Everthing = () => {
   return (
-    <div className="relative sm:px-[3rem] lg:px-[5rem] py-[2rem] md:py-[4rem] pt-[2rem] md:pt-[3rem] md:pb-[3rem] flex flex-col md:flex-row justify-between items-center max-w-[75rem] mx-auto">
+    <div className="relative mt-[5rem] md:mt-[10rem] mb-[5rem] md:mb-[10rem] flex flex-col md:flex-row justify-between items-center max-w-[75rem] mx-auto px-[0.8rem] sm:px-[3rem] md:px-[3rem] lg:px-0">
         <div className="w-full md:w-[50%] flex flex-col gap-4 mt-[rem] relative text-center md:text-left">
+        
           <h1 className="text-[1.5rem] md:text-[1.2rem] lg:text-[1.7rem] font-medium text-[#2F327D] max-w-[34rem] ">
             Everything you can do in a physical classroom,{" "}
             <span className="text-[#00CBB8]">you can do with TOTC</span>
@@ -33,8 +34,8 @@ const Everthing = () => {
             </div>
           </div>
         </div>
-        <div className="absolute right-[5rem] md:right-[-1rem] top-[-1rem] -z-10">
-          <div className="bg-[#23BDEE] w-[6rem] h-[6rem] rounded-2xl ml-[-15rem] md:ml-[-27rem] opacity-25 lg:opacity-100 "></div>
+        <div className="absolute right-[5rem] md:right-[2rem] lg:right-[-1rem] top-[-1rem] -z-10">
+          <div className="bg-[#23BDEE] w-[6rem] h-[6rem] rounded-2xl ml-[-15rem]  md:ml-[-27rem] opacity-25 lg:opacity-100 "></div>
           <div className="bg-[#33EFA0] w-[10rem] h-[10rem] rounded-2xl mt-[9.5rem] md:mt-[5rem] lg:mt-[9.5rem] "></div>
         </div>
       </div>

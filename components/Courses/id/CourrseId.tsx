@@ -1,4 +1,4 @@
-// "use client"
+"use client"
 
 import Image from "next/image";
 import img from "@/images/coss.png";
@@ -17,22 +17,25 @@ import {
   FaTimes,
 } from "react-icons/fa";
 import Link from "next/link";
+import { log } from "console";
 
+type Params = { params: { id: string } };
 
-
-const CourseId = async ({params} : {params: Promise<{id: string}>}) => {
+const CourseId = ({ params }: Params) => {
 
   // if (!params || !params.id) {
   //   return <h1 className="text-red-600">Error: ID not found</h1>;
   // }
-  const id = (await params).id
+
+  //const {id} = params
   const item = Course.find((item) => item.id);
+
 
 
   return (
     <div className="">
       <div className="">
-        <Image src={item?.bigImg} width={800} height={100} alt="" className="w-[100%]"/>
+        <Image src={item?.bigImg} width={800} height={100} alt="" className="w-[100%]" />
       </div>
       <div className="flex flex-col md:flex-row justify-between w-full mx-auto px-[0.8rem] sm:px-[3rem] lg:px-[5rem] py-[2rem] mt-[2rem] md:mt-[3rem] md:mb-[3rem]">
         <div className="flex flex-col w-full md:w-[66%] xl:w-[55%]">
@@ -137,8 +140,8 @@ const CourseId = async ({params} : {params: Promise<{id: string}>}) => {
         </div>
         <div className="w-[100%] md:w-[25%] bg-[#fff] p-[1rem] rounded-lg mt-[3rem] md:mt-[-18rem]">
           <div className=" flex flex-col gap-[1.8rem]">
-            <Image src={item?.image} width={100} height={100}  alt="Image" className="w-full"></Image>
-            <div className="flex items-center gap-5">
+            <Image src={item?.image} width={100} height={100} alt="Image" className="w-full"></Image>
+            <div className="flex md:flex-col lg:flex-row items-center gap-5">
               <span className="font-medium text-[1.8rem]">$49.65</span>
               <span className="text-[#00000082]">
                 <s>$99.99</s>
