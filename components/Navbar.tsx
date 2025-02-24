@@ -18,7 +18,7 @@ const Navbar = () => {
     { id: 2, name: "Courses", src: "/courses" },
     { id: 3, name: "Careers", src: "/careers" },
     { id: 4, name: "Blog", src: "/blog" },
-    { id: 5, name: "About us", src: "/about" },
+    { id: 5, name: "About us", src: "/aboutus" },
   ];
   return (
     <header className="flex justify-between items-center px-[0.8rem] sm:px-[3rem] lg:px-[5rem] bg-[#49BBBD] py-[0.5rem]">

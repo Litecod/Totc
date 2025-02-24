@@ -57,7 +57,7 @@ const slides = [
 
 export default function Carousel() {
   return (
-    <div className="w-full mx-auto px-[0.8rem] sm:px-[3rem] lg:px-[5rem] py-[2rem] md:py-[4rem] mt-[5rem] md:mt-[3rem] md:mb-[3rem] bg-[#9dccff50]">
+    <div className="w-full mx-auto px-[0.8rem] sm:px-[3rem] lg:px-[5rem] py-[2rem] md:py-[4rem] mt-[5rem] md:mt-[3rem]  bg-[#9dccff50]">
       <div className=" flex justify-between mb-[1.5rem]">
         <h1 className="font-medium text-[1.5rem]">Recent Blog</h1>
         <h4 className="text-[#49BBBD] texe-[0.9rem]">See all</h4>

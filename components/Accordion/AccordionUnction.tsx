@@ -30,22 +30,14 @@ const AccordionUnction = () => {
   };
   console.log(accordion);
   return (
-    <>
-      <div className="flex justify-between mt-[5rem]">
+    <div className="flex flex-col md:flex-row md:flex-wrap justify-between mt-[5rem] mb-[5rem]">
         {list.map((item, index) => (
-          <div
-            key={item.id}
-            className={
-              accordion === item.id
-                ? "rotate-0 duration-150 w-[20rem] ml-[-4rem] mt-[5rem]"
-                : "bg-[#fff] py-[0.5rem] w-[18rem] h-[3.5rem] rounded-xl rotate-[76deg] duration-150 mt-[5rem] ml-[-5rem]"
-            }
-          >
+          <div key={item.id} className="">
             <div
               className={
                 accordion === item.id
-                  ? ""
-                  : `bg-[${item.color}] w-[16rem] py-[0.5rem] h-[3.5rem] rounded-xl duration-150`
+                  ? "rotate-0 duration-150 w-[20rem] ml-[-4rem] "
+                  : "bg-[#81ff81] py-[0.5rem] w-[16rem] rounded-xl md:rotate-[76deg] duration-150 mt-[5rem] ml-[-5rem] mb-[5rem] "
               }
             >
               <div
@@ -62,11 +54,7 @@ const AccordionUnction = () => {
                 </h1>
                 <div>
                   {accordion === item.id ? (
-                    <Image
-                      src={accordionOne}
-                      alt="food"
-                      className="w-[100%] mt-[-2rem]"
-                    />
+                    <Image src={accordionOne} alt="food" className="w-[100%]" />
                   ) : (
                     ""
                   )}
@@ -76,7 +64,6 @@ const AccordionUnction = () => {
           </div>
         ))}
       </div>
-    </>
   );
 };
 

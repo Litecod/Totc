@@ -21,7 +21,7 @@ import { log } from "console";
 
 type Params = { params: { id: string } };
 
-const CourseId = ({ params }: Params) => {
+const CourseId = () => {
 
   // if (!params || !params.id) {
   //   return <h1 className="text-red-600">Error: ID not found</h1>;

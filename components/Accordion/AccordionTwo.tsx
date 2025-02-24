@@ -29,42 +29,40 @@ const AccordionTwo = () => {
   };
   console.log(accordion);
   return (
-    <>
-      <div className="flex justify-between mt-[5rem]">
-        {list.map((item, index) => (
-          <div key={item.id} className="">
+    <div className="flex justify-between mt-[5rem]">
+      {list.map((item, index) => (
+        <div key={item.id} className="">
+          <div
+            className={
+              accordion === item.id
+                ? "rotate-0 duration-150 w-[20rem] ml-[-4rem] "
+                : "bg-[#81ff81] py-[0.5rem] w-[16rem] rounded-xl rotate-[76deg] duration-150 mt-[5rem] ml-[-5rem]"
+            }
+          >
             <div
+              key={index}
+              onClick={() => handleAccordion(item.id)}
               className={
                 accordion === item.id
-                  ? "rotate-0 duration-150 w-[20rem] ml-[-4rem] "
-                  : "bg-[#81ff81] py-[0.5rem] w-[16rem] rounded-xl rotate-[76deg] duration-150 mt-[5rem] ml-[-5rem]"
+                  ? " w-[100%]"
+                  : "bg-[#6DB4A7] w-[15rem] py-[0.5rem] rounded-xl mx-auto"
               }
             >
-              <div
-                key={index}
-                onClick={() => handleAccordion(item.id)}
-                className={
-                  accordion === item.id
-                    ? " w-[100%]"
-                    : "bg-[#6DB4A7] w-[15rem] py-[0.5rem] rounded-xl mx-auto"
-                }
-              >
-                <h1 className={accordion === item.id ? "" : " text-center"}>
-                  {item.title}
-                </h1>
-                <div>
-                  {accordion === item.id ? (
-                    <Image src={accordiontwo} alt="food" className="w-[100%]" />
-                  ) : (
-                    ""
-                  )}
-                </div>
+              <h1 className={accordion === item.id ? "" : " text-center"}>
+                {item.title}
+              </h1>
+              <div>
+                {accordion === item.id ? (
+                  <Image src={accordiontwo} alt="food" className="w-[100%]" />
+                ) : (
+                  ""
+                )}
               </div>
             </div>
           </div>
-        ))}
-      </div>
-    </>
+        </div>
+      ))}
+    </div>
   );
 };
 

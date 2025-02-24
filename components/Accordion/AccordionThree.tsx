@@ -37,7 +37,7 @@ const AccordionThree = () => {
                     className={
                       accordion === item.id
                         ? "rotate-0 duration-150 w-[20rem] ml-[-4rem] "
-                        : "bg-[#81ff81] py-[0.5rem] w-[16rem] rounded-xl rotate-[76deg] duration-150 mt-[5rem] ml-[-5rem]"
+                        : "bg-[#81ff81] py-[0.5rem] w-[16rem] rounded-xl rotate-[76deg] duration-150 mt-[5rem] ml-[-5rem] mb-[9rem]"
                         
                     }
                   >
