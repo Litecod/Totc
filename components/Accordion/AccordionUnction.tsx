@@ -3,6 +3,8 @@
 import { useState } from "react";
 import accordionOne from "@/images/accordion1.png";
 import Image from "next/image";
+import { FaArrowCircleRight, FaArrowRight } from "react-icons/fa";
+import { IoIosColorPalette } from "react-icons/io";
 
 type AccordionProps = {
   id: string;
@@ -30,14 +32,23 @@ const AccordionUnction = () => {
   };
   console.log(accordion);
   return (
-    <div className="flex flex-col md:flex-row md:flex-wrap justify-between mt-[5rem] mb-[5rem]">
+    <div className="z-10">
+      <div className="">
+        <h1 className="text-[1.5rem] md:text-[2rem] font-medium">Explore Course</h1>
+        <p className="text-[#0000008A]">Ut sed eros finibus, placerat orci id, dapibus.</p>
+      </div>
+      <div className=" flex justify-between mb-[1.5rem] items-center mt-[2rem] md:mt-[8rem]">
+        <h1 className="font-medium text-[1.5rem] flex items-center md:gap-4"><IoIosColorPalette className="text-[#0000008A]"/> Lorem Ipsum</h1>
+        <h4 className="text-[#49BBBD] text-[1.2rem] flex md:gap-4 items-center">SEE ALL<FaArrowRight /> </h4>
+      </div>
+      <div className="flex flex-col md:flex-row md:flex-wrap justify-between md:mt-[5rem] md:mb-[5rem]">
         {list.map((item, index) => (
           <div key={item.id} className="">
             <div
               className={
                 accordion === item.id
-                  ? "rotate-0 duration-150 w-[20rem] ml-[-4rem] "
-                  : "bg-[#81ff81] py-[0.5rem] w-[16rem] rounded-xl md:rotate-[76deg] duration-150 mt-[5rem] ml-[-5rem] mb-[5rem] "
+                  ? "rotate-0 duration-150 w-full md:w-[20rem] md:ml-[-4rem] "
+                  : "bg-[#81ff81] py-[0.5rem] w-full md:w-[16rem] rounded-xl md:rotate-[76deg] duration-150 mt-[5rem] md:ml-[-5rem] mb-[5rem] "
               }
             >
               <div
@@ -46,7 +57,7 @@ const AccordionUnction = () => {
                 className={
                   accordion === item.id
                     ? " w-[100%]"
-                    : "bg-[#6DB4A7] w-[15rem] py-[0.5rem] rounded-xl mx-auto"
+                    : "bg-[#6DB4A7] w-[97%] md:w-[15rem] py-[0.5rem] rounded-xl mx-auto"
                 }
               >
                 <h1 className={accordion === item.id ? "" : " text-center"}>
@@ -64,6 +75,7 @@ const AccordionUnction = () => {
           </div>
         ))}
       </div>
+    </div>
   );
 };
 

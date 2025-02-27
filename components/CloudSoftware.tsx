@@ -4,7 +4,7 @@ import { MdGroups2 } from "react-icons/md";
 
 const CloudSoftware = () => {
   return (
-    <div className="px-[0.8rem] sm:px-[3rem] lg:px-[5rem] mt-[5rem] md:mt-[10rem]">
+    <div className="px-[0.8rem] sm:px-[3rem] lg:px-[5rem] mt-[5rem] md:mt-[10rem] ">
       <div className="text-center flex flex-col gap-[-0.8rem] md:gap-[1rem] ">
         <h1 className="text-[1.5rem] md:text-[2rem] font-medium text-[#2F327D]">
           All-In-One <span className="text-[#00CBB8]">Cloud Software.</span>

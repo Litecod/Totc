@@ -3,6 +3,9 @@
 import { useState } from "react";
 import accordiontwo from "@/images/accordion2.png";
 import Image from "next/image";
+import { IoIosColorPalette } from "react-icons/io";
+import { FaArrowRight } from "react-icons/fa";
+import { IoEarth } from "react-icons/io5";
 
 type AccordionProps = {
   id: string;
@@ -29,39 +32,45 @@ const AccordionTwo = () => {
   };
   console.log(accordion);
   return (
-    <div className="flex justify-between mt-[5rem]">
-      {list.map((item, index) => (
-        <div key={item.id} className="">
-          <div
-            className={
-              accordion === item.id
-                ? "rotate-0 duration-150 w-[20rem] ml-[-4rem] "
-                : "bg-[#81ff81] py-[0.5rem] w-[16rem] rounded-xl rotate-[76deg] duration-150 mt-[5rem] ml-[-5rem]"
-            }
-          >
+    <div className="">
+      <div className=" flex justify-between mb-[1.5rem] items-center mt-[2rem] md:mt-[8rem]">
+        <h1 className="font-medium text-[1.5rem] flex items-center md:gap-4"><IoEarth className="text-[#0000008A]" /> Lorem Ipsum</h1>
+        <h4 className="text-[#49BBBD] text-[1.2rem] flex md:gap-4 items-center">SEE ALL<FaArrowRight /> </h4>
+      </div>
+      <div className="flex flex-col md:flex-row md:flex-wrap justify-between md:mt-[5rem] md:mb-[5rem]">
+        {list.map((item, index) => (
+          <div key={item.id} className="">
             <div
-              key={index}
-              onClick={() => handleAccordion(item.id)}
               className={
                 accordion === item.id
-                  ? " w-[100%]"
-                  : "bg-[#6DB4A7] w-[15rem] py-[0.5rem] rounded-xl mx-auto"
+                  ? "rotate-0 duration-150 w-full md:w-[20rem] md:ml-[-4rem] "
+                  : "bg-[#81ff81] py-[0.5rem] w-full md:w-[16rem] rounded-xl md:rotate-[76deg] duration-150 mt-[5rem] md:ml-[-5rem] mb-[5rem] "
               }
             >
-              <h1 className={accordion === item.id ? "" : " text-center"}>
-                {item.title}
-              </h1>
-              <div>
-                {accordion === item.id ? (
-                  <Image src={accordiontwo} alt="food" className="w-[100%]" />
-                ) : (
-                  ""
-                )}
+              <div
+                key={index}
+                onClick={() => handleAccordion(item.id)}
+                className={
+                  accordion === item.id
+                    ? " w-[100%]"
+                    : "bg-[#6DB4A7] w-[97%] md:w-[15rem] py-[0.5rem] rounded-xl mx-auto"
+                }
+              >
+                <h1 className={accordion === item.id ? "" : " text-center"}>
+                  {item.title}
+                </h1>
+                <div>
+                  {accordion === item.id ? (
+                    <Image src={accordiontwo} alt="food" className="w-[100%]" />
+                  ) : (
+                    ""
+                  )}
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };
