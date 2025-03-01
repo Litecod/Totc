@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link";
 import { IoIosPlayCircle } from "react-icons/io";
 import { FaRegCalendarAlt } from "react-icons/fa";
@@ -5,12 +7,18 @@ import { MdInsertChart } from "react-icons/md";
 import { GrMail } from "react-icons/gr";
 import Image from "next/image";
 import person from "@/images/Ellipse.png";
+import { motion } from "framer-motion"
 
 const Hero = () => {
   return (
     <div className="bg-[url(@/images/header-bg.png)] md:bg-[url(@/images/header-md.png)] bg-cover w-[100%] md:h-[100vh] lg:h-[120vh] max-h-[58rem] md:mt-[-10rem]">
       <div className="relative flex flex-col md:flex-row items-center px-[0.8rem] sm:px-[3rem] lg:px-[5rem] text-white justify-between">
-        <div className="mt-[5rem] md:mt-[10rem] md:w-[50%] text-center md:text-left">
+        <motion.div
+          initial={{ y: "2rem", opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 2.5, type: "spring" }} 
+          className="mt-[5rem] md:mt-[10rem] md:w-[50%] text-center md:text-left"
+          >
           <h1 className="text-[2.5rem] sm:text-[3rem] font-medium">
             <span className="text-orange-500 ">Studying</span> Online is now much
             easier
@@ -34,8 +42,13 @@ const Hero = () => {
               </span>
             </div>
           </div>
-        </div>
-        <div className="mt-[8rem] md:mt-[22rem] lg:">
+        </motion.div>
+        <motion.div
+        initial={{y: -50, opacity: 0}}
+        animate={{y: 0, opacity: 1}}
+        transition={{duration: 2.5, type: "spring"}}
+         className="mt-[8rem] md:mt-[22rem] lg:"
+         >
           <div className="relative flex gap-[1rem] sm:gap-[10rem] md:gap-[3rem] lg:gap-[10rem] xl:gap-[20rem] ">
             <div className=" bg-[#ffffffe2] px-[1rem] flex items-center gap-4 py-[0.5rem] rounded-xl h-[4.5rem] w-[14rem]">
               <FaRegCalendarAlt className="text-[2rem] bg-[#23BDEE] p-[0.4rem] rounded-md" />
@@ -72,7 +85,7 @@ const Hero = () => {
               </div>
             </div>
             <div className="bg-[#ffffffc7] px-[1rem] flex gap-4 py-[1rem] rounded-xl h-[4.5rem] w-[16rem] mt-[-8rem] ml-[-13rem] sm:ml-[2rem] md:ml-[-12rem] lg:ml-[-5rem] xl:ml-0">
-              <GrMail 
+              <GrMail
                 className="text-[2rem] bg-[#F88C3D] p-[0.4rem] rounded-md"
               />
               <div className="text-black">
@@ -83,7 +96,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

@@ -1,12 +1,40 @@
+"use client"
+
 import instructor from "@/images/instructor.png";
 import student from "@/images/student.png";
 import Image from "next/image";
 import Link from "next/link";
 import { IoIosPlayCircle } from "react-icons/io";
+import { useRef, useEffect } from "react";
+import { motion, useInView, useAnimation } from "framer-motion"
 
 const Toct = () => {
+
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true })
+  const mainControl = useAnimation()
+
+
+  useEffect(() => {
+    if (inView) {
+      mainControl.start("visible")
+    }
+  }, [inView, mainControl])
+
+
   return (
-    <div className="px-[0.8rem] sm:px-[3rem] lg:px-[5rem] mt-[5rem] md:mt-[10rem]">
+    <motion.div
+      ref={ref}
+      variants={
+        {
+          hidden: { y: 40, opacity: 0 },
+          visible: { y: 0, opacity: 1 }
+        }
+      }
+      initial="hidden"
+      animate={mainControl}
+      transition={{ duratiom: 2.5, type: "spring" }}
+      className="px-[0.8rem] sm:px-[3rem] lg:px-[5rem] mt-[5rem] md:mt-[10rem]">
       <div className="text-center flex flex-col gap-[-0.8rem] md:gap-[1rem] ">
         <h1 className="text-[1.5rem] md:text-[2rem] font-medium text-[#2F327D]">
           What is <span className="text-[#00CBB8]">TOTC?</span>
@@ -19,7 +47,16 @@ const Toct = () => {
         </h5>
       </div>
       <div className="mt-[5rem] flex flex-col md:flex-row justify-between max-w-[70rem] mx-auto">
-        <div className="relative w-full md:w-[25rem] lg:w-[30rem]">
+        <motion.div
+          ref={ref}
+          variants={{
+            hidden: { x: -70, opacity: 0 },
+            visible: { x: 0, opacity: 1 }
+          }}
+          initial="hidden"
+          animate={mainControl}
+          transition={{ duration: 2.5, type: "spring" }}
+          className="relative w-full md:w-[25rem] lg:w-[30rem]">
           <Image src={instructor} alt="An Instructor" className="w-[100%]" />
           <div className="absolute flex flex-col gap-2 w-[100%] h-[100%] top-0 left-0 bg-[#0000001b] rounded-2xl">
             <div className="text-center justify-center my-auto">
@@ -34,8 +71,16 @@ const Toct = () => {
               </Link>
             </div>
           </div>
-        </div>
-        <div className="relative w-full md:w-[25rem] lg:w-[30rem]  mt-5 md:mt-0">
+        </motion.div>
+        <motion.div
+          ref={ref}
+          variants={{
+            hidden: { x: 70, opacity: 0 },
+            visible: { x: 0, opacity: 1 }
+          }}
+          initial="hidden"
+          animate={mainControl}
+          transition={{ duration: 2.5, type: "spring" }} className="relative w-full md:w-[25rem] lg:w-[30rem]  mt-5 md:mt-0">
           <Image src={student} alt="An Instructor" className="w-[100%]" />
           <div className="absolute flex flex-col gap-2 w-[100%] h-[100%] top-0 left-0 bg-[#0000001b] rounded-2xl">
             <div className="text-center justify-center my-auto">
@@ -50,7 +95,7 @@ const Toct = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className="relative mt-[5rem] md:mt-[10rem]  flex flex-col md:flex-row justify-between items-center max-w-[75rem] mx-auto">
         <div className="w-full md:w-[50%] flex flex-col gap-4 mt-[rem] relative text-center md:text-left">
@@ -83,10 +128,10 @@ const Toct = () => {
         <div className="absolute right-[-1rem] top-[-1rem] -z-10">
           <div className="bg-[#23BDEE] w-[6rem] h-[6rem] rounded-2xl ml-[-27rem] opacity-25 lg:opacity-100"></div>
           <div className="bg-[#33EFA0] w-[10rem] h-[10rem] rounded-2xl mt-[9.5rem] md:mt-[5rem] lg:mt-[9.5rem]"></div>
-        
+
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
